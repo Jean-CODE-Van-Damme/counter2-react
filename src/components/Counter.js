@@ -1,24 +1,19 @@
-const Counter = ({ tab, setTab, copyTab, key }) => {
-  console.log(key);
+const Counter = ({ tab, setTab, copyTab, numero, element }) => {
+  console.log(numero);
+
   const counterI = () => {
-    for (let i = 0; i < copyTab.length; i++) {
-      copyTab[i] = copyTab[i] + 1;
-      setTab(copyTab);
-    }
+    copyTab[numero] = copyTab[numero] + 1;
+    setTab(copyTab);
   };
 
   const counterD = () => {
-    for (let i = 0; i < copyTab.length; i++) {
-      copyTab[i] = copyTab[i] - 1;
-      setTab(copyTab);
-    }
+    copyTab[numero] = copyTab[numero] - 1;
+    setTab(copyTab);
   };
 
   const reset = () => {
-    for (let i = 0; i < copyTab.length; i++) {
-      copyTab[i] = 0;
-      setTab(copyTab);
-    }
+    copyTab[numero] = 0;
+    setTab(copyTab);
   };
 
   return (
@@ -26,13 +21,13 @@ const Counter = ({ tab, setTab, copyTab, key }) => {
       <div className="bloc">
         <div className="horizontal">
           <div className="decrement">
-            {tab[0] !== 0 && <button onClick={counterD}>-</button>}
+            {element !== 0 && <button onClick={counterD}>-</button>}
           </div>
 
-          <p>{tab[0]}</p>
+          <p>{element}</p>
 
           <div className="increment">
-            {tab[0] < 10 && <button onClick={counterI}>+</button>}
+            {element < 10 && <button onClick={counterI}>+</button>}
           </div>
         </div>
         <div className="reset">

@@ -37,7 +37,14 @@ function App() {
       <section className="counter">
         {tab.map((element, index) => {
           return (
-            <Counter tab={tab} setTab={setTab} copyTab={copyTab} key={index} />
+            <Counter
+              tab={tab}
+              setTab={setTab}
+              copyTab={copyTab}
+              key={index}
+              element={element}
+              numero={index}
+            />
           );
         })}
       </section>
